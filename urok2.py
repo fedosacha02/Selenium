@@ -27,4 +27,14 @@ def get_proxy(driver):
         "ftpProxy": received_PROXY,
         "sslProxy": received_PROXY
     }
+    login = "login"
+    password = "password"
+
+
+    proxy = {
+        "proxy": {
+        "https": f"http://{login}:{password}@127.0.0.1:8000"
+                 }
+            }
+    driver = webdriver.Chrome(executable_path="chromedriver.exe",seleniumwire_options=proxy)
 get_proxy(driver)
